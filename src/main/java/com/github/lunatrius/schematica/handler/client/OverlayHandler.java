@@ -44,14 +44,14 @@ public class OverlayHandler {
 
                     final BlockPos offsetPos = pos.add(schematic.position);
                     String lookMessage = String.format("Looking at: %d %d %d (%d %d %d)", pos.getX(), pos.getY(), pos.getZ(), offsetPos.getX(), offsetPos.getY(), offsetPos.getZ());
-                    if (this.minecraft.objectMouseOver != null && this.minecraft.objectMouseOver.typeOfHit == RayTraceResult.Type.BLOCK) {
+                    if (this.minecraft.objectMouseOver != null && this.minecraft.objectMouseOver.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
                         final BlockPos origPos = this.minecraft.objectMouseOver.getBlockPos();
                         if (offsetPos.equals(origPos)) {
                             lookMessage += " (matches)";
                         }
                     }
 
-                    left.add(SCHEMATICA_PREFIX + lookMessage);
+                    event.left.add("[§6Schematica§r] " + lookMessage);
                 }
             }
         }
