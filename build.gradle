@@ -69,9 +69,8 @@ processResources {
 }
 
 repositories {
-    ivy {
-        name = 'lunatrius\' ivy repo'
-        url 'http://mc.lunatri.us/files'
+    flatDir {
+        dir 'libs'
     }
 }
 
